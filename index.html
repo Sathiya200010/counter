@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+  
+    <style>
+        
+        h1{
+            font-weight: 400;
+            font-size: 60px;
+            padding:2px;
+            margin:2px;
+    
+        }
+        body{
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding-left: 5%;
+            width:75%;
+        }
+        hr{
+            width:25%;
+            margin: 5px;
+        }
+        button{
+            width: 120px;
+            height: 30px;
+            
+            }
+        h2{
+            padding:2px;
+            margin:2px;
+        }
+        p{
+             color:red;
+        }
+       .active{
+        background-color: aliceblue;
+
+       }
+        #two{
+        border-color: white;
+        background-color:black;
+        color:white;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Counter using HTML </h1>
+    <h2 id="count">Your current count is: 0</h2>
+    <hr>
+<br>
+<p id="err" ></p>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="increment()">Increment</button>
+    <button onclick="clearCount();" id="two">
+    Clear
+</button>
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            document.getElementById("count").innerText =
+                "Your current count is: " + count;
+                document.getElementById("two").style.display="inline-block";
+        }
+
+        function decrement() {
+            if(count<=0){
+                document.getElementById("err").innerText= 
+                "Error : Cannot go below 0";
+                document.getElementById("two").style.display="none";
+                         
+            }
+            else{
+            count--;
+            document.getElementById("count").innerText =
+                "Your current count is: " + count;
+                 document.getElementById("two").style.display="inline-block";
+                    }        }
+
+        function clearCount() {
+                 count = 0;           
+                document.getElementById("err").innerText= "Error : Cannot go below 0";
+                 document.getElementById("two").style.display="none";
+               (document.getElementById("count").innerText ="Your current count is: " + count );
+        
+    }
+    </script>
+
+</body>
+</html>
